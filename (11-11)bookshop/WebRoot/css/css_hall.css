@@ -1,0 +1,609 @@
+@CHARSET "utf-8";
+*{
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1540px;
+    width: 1340px;
+}
+.calean_float{
+    clear: both;
+}
+body{
+    display: block;
+    font-family: "瀹嬩綋";
+    font-size: 12px;
+}
+
+
+
+.logo{
+    float: left;
+    width: 212px;
+    height:64px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.logo img{
+    width: 100%;
+    height: 100%;
+}
+
+.box_serach_bot{
+    width: 950px;
+    height: 58px;
+}
+.zp-searchbar__box{
+    width: 950px;
+    height: 58px;
+    position: relative;
+    font-size: 0;
+    line-height: 58px;
+}
+
+.box-1{
+    height: 56px;
+    background-color: white;
+    width: 81px;
+    cursor: pointer;
+    color:#495060;
+    font-size: 16px;
+    display: inline-block;
+    position: relative;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 56px;
+    margin-top: 2px;
+}
+
+.box-1-content{
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 58px;
+    width: 83px;
+    background-color: black;
+    z-index: 100;
+}
+
+.box-1-content ul{
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.box-1-content ul li{
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+    line-height: 30px;
+}
+
+.box-1-content ul li:hover{
+    cursor: pointer;
+    background-color: #cccccc;
+    color: red;
+}
+.zp-searchbar__box_input{
+    height: 56px;
+    width: 675px;
+    vertical-align: top;
+    display: inline-block;
+    border: 1px solid #ccc;
+    text-indent: 20px;
+    font-size: 16px;
+    margin-top: 2px;
+}
+
+.zp-searchbox__button{
+    display: inline-block;
+    width: 98px;
+    line-height: 56px;
+    height: 56px;
+    background:#1787fb;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 2px;
+    margin-left: 5px;
+}
+.zp-searchbox__button{
+    text-decoration: none;
+
+}
+.zp-main-container{
+    margin-top: 20px;
+    position: relative;
+}
+
+.zp-main-container-biaoqian{
+    float: left;
+    width: 220px;
+    margin: 0;
+    border: 1px red solid;
+    padding: 5px;
+}
+.zp-jobNavigater-item{
+    background-color: white;
+    font-size: 14px;
+    position: relative;
+    list-style: none;
+    line-height: 40px;
+    padding: 0 24px;
+}
+
+ol{
+    display: inline-block;
+    height: 100%;
+    width: 220px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.swiper-container {
+    margin-left: 20px;
+    float: left;
+    display: inline-block;
+    position: relative;
+    width: 990px;
+    height: 410px;
+    cursor: pointer;
+}
+
+.swiper-container ul li{
+    list-style-type: none;
+}
+.swiper-container img{
+    width: 990px;
+    height: 410px;
+}
+
+.zp-main-container-geren{
+    margin-left: 10px;
+    display: inline-block;
+    width:262px;
+    height: 410px;
+}
+
+.zp-main-container-geren-1{
+    width:262px;
+    zoom: 1;
+}
+.zp-main-container-geren-1 img{
+    background: url("../img/avater_default.png");
+    width: 66px;
+    height: 66px;
+    background-size: 66px,66px;
+}
+
+.c-category-list{
+    position:relative;
+    margin-top: 7px;
+    padding-bottom: 10px;
+    zoom: 1;
+    overflow: hidden;
+    padding-right: 50px;
+}
+
+.category-info{
+    position: relative;
+    width: 100%;
+
+}
+.category-info h3,p{
+    width: 100%;
+}
+.zp-jobNavigater-list{
+    width: 100%;
+}
+.zp-jobNavigater-list li{
+    list-style-type: none;
+}
+
+.zp-jobNavigater-item{
+    padding: 0;
+    width: 90%;
+    background: url("../img/navline.jpg") no-repeat bottom center;
+}
+
+.category-info a{
+    text-decoration: none;
+    color: black;
+}
+
+.zp-jobNavigater-item-title{
+    height: 40px;
+    line-height: 40px;
+    background: #e60000 url(../img/categoryarrowdown.png) no-repeat 179px 18px;;
+    color: white;
+    width: 100%;
+}
+
+.zp-jobNavigater-item-title span{
+    position: absolute;
+    left: 13px;
+    top: 14px;
+    width: 16px;
+    height: 15px;
+    background: url("../img/homeindex.png") no-repeat -9px 0px ;
+}
+
+.p-jobNavigater-item-title-a{
+    position: absolute;
+    left: 36px;
+    top: 1px;
+}
+
+.hotBook{
+    width: 750px;
+    overflow: hidden;
+}
+
+.tabTit{
+    overflow: hidden;
+    margin: 0;
+    width: 100%;
+}
+
+.tabTit a{
+    display: inline-block;
+    width: auto;
+    cursor: pointer;
+    border-top: 3px solid #eff2fa;
+    color: #333333;
+    font-family: "Microsoft YaHei";
+    font-size: 16px;
+    height: 37px;
+    line-height: 50px;
+    padding: 0px 25px;
+    text-decoration: none;
+}
+
+.tabPanel{
+    margin: 0;
+    border: 0;
+    padding:0;
+    width: 750px;
+    background-color: white;
+}
+
+.tabItem.cur{
+    display: block;
+    width: 100%;
+}
+.mainEditor{
+    overflow: hidden;
+    width: 100%;
+}
+
+.mainEditorInner{
+    padding: 15px 15px 0;
+    height: 174px;
+    border-bottom: 1px solid #eef1f9;
+}
+
+.mainCover{
+    float: left;
+    height: 160px;
+    width: 189px;
+    text-align: center;
+    display: inline;
+    position: relative;
+}
+
+.mainCover a{
+    display: block;
+    height: 160px;
+    background: #ffffff;
+    width: 100%;
+}
+
+.mainCover a img{
+    max-height: 160px;
+    max-width: 160px;
+}
+
+.mainText{
+    float: left;
+    width: 495px;
+    display: inline;
+    overflow: hidden;
+}
+
+.priceWrap{
+    float: left;
+    overflow: hidden;
+    line-height: 30px;
+    width: 200px;
+}
+
+.priceWrap span{
+    font-size: 18px;
+    font-family: "Microsoft YaHei";
+    width: 80px;
+}
+
+.startWrap{
+    width: 30%;
+    float: left;
+    overflow: hidden;
+    margin-left: 27px;
+    height:30px;
+    line-height: 30px;
+}
+
+.startWrap b{
+    float: left;
+    margin-left: 17px;
+    color: #ff6c00;
+    width: 80px;
+}
+
+.sellPrice{
+    font-size: 20px;
+    color: #e60000;
+}
+
+.mainText h2{
+    width: 100%;
+}
+
+.mainFont{
+    height: 96px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.tabbook{
+    padding:0 1px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.clearfix{
+    zoom: 1;
+    display: block;
+    width: 100%;
+}
+
+.main_clearfix{
+    margin-top: 20px;
+	zoom: 1;
+    display: block;
+    width: 100%;
+    z-index: 10;
+}
+.clearfix {
+    overflow: hidden;
+}
+
+.clearfix li{
+    float: left;
+    width: 182px;
+    overflow: hidden;
+    position: relative;
+}
+.Img{
+    text-align: center;
+    margin-top: 7px;
+    height:158px;
+    width: 100%;
+}
+
+.Img a{
+    display: block;
+    width: 100%;
+}
+
+.Img img{
+    max-height: 158px;
+    max-width: 158px;
+    width: 100%;
+}
+.name{
+    width: 100%;
+    padding: 10px 15px 0;
+    line-height: 18px;
+    height: 36px;
+    overflow: hidden;
+}
+
+.price{
+    padding: 10px 15px 0;
+    font-size: 20px;
+}
+
+.priceWrap2{
+    padding: 0px 15px;
+    width: 180px;
+}
+
+.tabCon{
+    float: left;
+    width: 750px;
+    background-color: #eff2fa;
+    padding: 10px;
+    overflow: hidden;
+
+}
+
+.hotTitle{
+    width: 200px;
+    height: 32px;
+    margin: 0;
+    padding: 0;
+}
+
+.hotTitle h2{
+    width: 140px;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+.hotTitle a{
+    width: 60px;
+}
+
+
+.hot_saleInner{
+    width: 200px;
+    line-height: 30px;
+}
+
+.hot_sale a{
+    height: 30px;
+    float: right;
+    color:#999999;
+}
+
+.hot_sale{
+    width: 170px;
+    font-size: 12px;
+    position: relative;
+    background: #fff;
+    margin-left: 10px;
+    float: left;
+}
+
+.hotNav{
+    font-size: 12px;
+    position: relative;
+    background: #fff;
+    width: 100%;
+}
+
+.navDot{
+    overflow: hidden;
+    height: 36px;
+    border-right: 1px solid #e6e6e6;
+    position: relative;
+    width: 100%;
+}
+
+.navDot ul{
+    overflow: hidden;
+    width: 560px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.navDot ul li{
+    float: left;
+    width: 50px;
+    height: 34px;
+    display: inline;
+    border: 1px solid #e6e6e6;
+    border-right: none;
+    line-height: 34px;
+    list-style: none;
+}
+
+.navDot ul li a{
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: #333333;
+}
+
+.hotcon{
+    border: 1px solid #eaeaea;
+    border-top: none;
+    border-bottom: none;
+    overflow: hidden;
+    background: #fff;
+    width: 100%;
+
+}
+.hotcon ul{
+    width: 100%;
+}
+.hotcon ul li{
+    position: relative;
+    border-bottom: 1px solid #eaeaea;
+    height:30px;
+    width: 100%;
+    line-height: 30px;
+}
+
+.hotcon ul li a{
+    padding-left: 20px;
+    width: 50px;
+    float: none;
+    color: #333333;
+}
+.hotcon ul li span{
+    display: inline-block;
+    width: 60px;
+}
+
+.bookInfo{
+	float: left;
+    width: 630px;
+}
+
+.padLeft10{
+	padding-left: 10px;
+}
+.padLeft10 h1{
+	line-height: 24px;
+    margin-top: 7px;
+    font-family: 'Microsoft YaHei';
+    font-size: 18px;
+    color: #333333;
+}
+
+#swiper-container-imgs{
+    width: 100%;
+}
+
+#swiper-container-imgs ul{
+    width: 100%;
+}
+
+#swiper-container-imgs ul li{
+    width: 100%;
+}
+
+.bannerdot{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+}
+
+.bannerdot.float5 a{
+    width: 20%;
+    background-image: none;
+}
+
+.bannerdot a span{
+    vertical-align: middle;
+    padding: 0 10px;
+    width: 20%;
+    display: table-cell;
+}
+
+.bannerdot a{
+    float: left;
+    width: 178px;
+    padding: 3px 0;
+    text-align: center;
+    height: 34px;
+    color: #fff;
+    cursor: pointer;
+    line-height: 17px;
+    display: table;
+    background: url(../img/bannerline.png) no-repeat right;
+    background-color: rgba(0,0,0,0.7);
+    background: #000\9;
+    filter: Alpha(opacity=50)\9;
+    text-decoration: none;
+}
+
+.category-info a:hover{
+    color: red;
+}

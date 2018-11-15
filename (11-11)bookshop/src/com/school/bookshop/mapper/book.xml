@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.school.bookshop.dao.BookDao">
+	<sql id="selectBookAll">
+		SELECT
+		 BOOK_ID as bookId,BOOK_IMG_URL as bookImgUrl,
+		BOOK_TITLE as bookTitle,BOOK_AUTHOR as bookAuthor,
+		BOOK_PUBLISHTIEM as bookPublishTime,BOOK_PUBLISER as bookPubliser,
+		BOOK_SELLPRICE as bookSellPrice,BOOK_DISCOUNT as bookDiscount,
+		BOOK_ORIGINALPRICE as bookOrignalPrice,BOOK_RECOLAGU as bookRecolagu,
+		BOOK_DETAILED_URL as bookDetailedUrl,BOOK_BOOKOPENBOOK as bookBookOpenBook,
+		BOOK_PAGENUMBER as bookPageNumber,BOOK_ISBN as bookIsbn,
+		BOOK_BARCODE as bookBarcode,
+		BOOK_BINDING as bookBinding,BOOK_KIND as bookKind,
+		BOOK_KINDTEXT as bookKingText,BOOK_SPECIALIST as bookSpeciaList,
+		BOOK_BRIEF as bookBrief,BOOK_CATALOG as bookCatalog,
+		BOOK_EXCERPT as bookExcerpt,BOOK_XIANGGUAN as bookXiangguan,
+		BOOK_ZUOZHEJIANJIE as bookZuoZheJianJie,BOOK_CATEGORY_ID as bookCateGoryId 
+		FROM TB_BOOK
+	</sql>
+	
+	<sql id="selectBookByPage">
+		SELECT top 20
+		 BOOK_ID as bookId,BOOK_IMG_URL as bookImgUrl,
+		BOOK_TITLE as bookTitle,BOOK_AUTHOR as bookAuthor,
+		BOOK_PUBLISHTIEM as bookPublishTime,BOOK_PUBLISER as bookPubliser,
+		BOOK_SELLPRICE as bookSellPrice,BOOK_DISCOUNT as bookDiscount,
+		BOOK_ORIGINALPRICE as bookOrignalPrice,BOOK_RECOLAGU as bookRecolagu,
+		BOOK_DETAILED_URL as bookDetailedUrl,BOOK_BOOKOPENBOOK as bookBookOpenBook,
+		BOOK_PAGENUMBER as bookPageNumber,BOOK_ISBN as bookIsbn,
+		BOOK_BARCODE as bookBarcode,
+		BOOK_BINDING as bookBinding,BOOK_KIND as bookKind,
+		BOOK_KINDTEXT as bookKingText,BOOK_SPECIALIST as bookSpeciaList,
+		BOOK_BRIEF as bookBrief,BOOK_CATALOG as bookCatalog,
+		BOOK_EXCERPT as bookExcerpt,BOOK_XIANGGUAN as bookXiangguan,
+		BOOK_ZUOZHEJIANJIE as bookZuoZheJianJie,BOOK_CATEGORY_ID as bookCateGoryId 
+		FROM TB_BOOK
+	</sql>
+	
+	<sql id="selectBookByCount">
+		SELECT count(*)
+		FROM TB_BOOK
+		<include refid="selectBookQuery"></include>
+	</sql>
+	<!-- 带条件的搜索（不分页） -->
+	<sql id="selectBookQuery">
+		
+		
+		<trim prefix="where" suffixOverrides="and|or">
+			<if test="bookId!=null and bookId!=''">BOOK_ID=#{bookId} and</if>
+			<if test="bookImgUrl!=null and bookImgUrl!=''">BOOK_IMG_URL=#{bookImgUrl} and</if>
+			<if test="bookTitle!=null and bookTitle!=''">BOOK_TITLE=#{bookTitle} and</if>
+			<if test="bookAuthor!=null and bookAuthor!=''">BOOK_AUTHOR=#{bookAuthor} and</if>
+			<if test="bookPublishTime!=null and bookPublishTime!=''">BOOK_PUBLISHTIEM=#{bookPublishTime} and</if>
+			<if test="bookPubliser!=null and bookPubliser!=''">BOOK_PUBLISER=#{bookPubliser} and</if>
+			<if test="bookSellPrice!=null and bookSellPrice!=''">BOOK_SELLPRICE=#{bookSellPrice} and</if>
+			<if test="bookDiscount!=null and bookDiscount!=''">BOOK_DISCOUNT=#{bookDiscount} and</if>
+			<if test="bookOrignalPrice!=null and bookOrignalPrice!=''">BOOK_ORIGINALPRICE=#{bookOrignalPrice} and</if>
+			
+			<if test="bookRecolagu!=null and bookRecolagu!=''">BOOK_RECOLAGU=#{bookRecolagu} and</if>
+			<if test="bookDetailedUrl!=null and bookDetailedUrl!=''">BOOK_DETAILED_URL=#{bookDetailedUrl} and</if>
+			<if test="bookBookOpenBook!=null and bookBookOpenBook!=''">BOOK_BOOKOPENBOOK=#{bookBookOpenBook} and</if>
+			<if test="bookPageNumber!=null and bookPageNumber!=''">BOOK_PAGENUMBER=#{bookPageNumber} and</if>
+			<if test="bookIsbn!=null and bookIsbn!=''">BOOK_ISBN=#{bookIsbn} and</if>
+			<if test="bookBarcode!=null and bookBarcode!=''">BOOK_BARCODE=#{bookBarcode} and</if>
+			<if test="bookBinding!=null and bookBinding!=''">BOOK_BINDING=#{bookBinding} and</if>
+			<if test="bookKind!=null and bookKind!=''">BOOK_KIND=#{bookKind} and</if>
+			<if test="bookKingText!=null and bookKingText!=''">BOOK_KINDTEXT=#{bookKingText} and</if>
+			<if test="bookSpeciaList!=null and bookSpeciaList!=''">BOOK_SPECIALIST=#{bookSpeciaList} and</if>
+			<if test="bookBrief!=null and bookBrief!=''">BOOK_BRIEF=#{bookBrief} and</if>
+			<if test="bookCatalog!=null and bookCatalog!=''">BOOK_CATALOG=#{bookCatalog} and</if>
+			<if test="bookExcerpt!=null and bookExcerpt!=''">BOOK_EXCERPT=#{bookExcerpt} and</if>
+			<if test="bookXiangguan!=null and bookXiangguan!=''">BOOK_XIANGGUAN=#{bookXiangguan} and</if>
+			
+			<if test="bookZuoZheJianJie!=null and bookZuoZheJianJie!=''">BOOK_ZUOZHEJIANJIE=#{bookZuoZheJianJie} and</if>
+			<if test="bookCateGoryId!=null and bookCateGoryId!=''">BOOK_CATEGORY_ID=#{bookCateGoryId} and</if>
+			
+		</trim>
+	</sql>
+	<!-- 带条件的搜索（分页） -->
+	<sql id="selectBookQueryAndPage">
+		<include refid="selectBookByPage"></include>
+		<trim prefix="where" suffixOverrides="and|or">
+			<if test="bookId!=null and bookId!=''">BOOK_ID=#{bookId} and</if>
+			<if test="bookImgUrl!=null and bookImgUrl!=''">BOOK_IMG_URL=#{bookImgUrl} and</if>
+			<if test="bookTitle!=null and bookTitle!=''">BOOK_TITLE=#{bookTitle} and</if>
+			<if test="bookAuthor!=null and bookAuthor!=''">BOOK_AUTHOR=#{bookAuthor} and</if>
+			<if test="bookPublishTime!=null and bookPublishTime!=''">BOOK_PUBLISHTIEM=#{bookPublishTime} and</if>
+			<if test="bookPubliser!=null and bookPubliser!=''">BOOK_PUBLISER=#{bookPubliser} and</if>
+			<if test="bookSellPrice!=null and bookSellPrice!=''">BOOK_SELLPRICE=#{bookSellPrice} and</if>
+			<if test="bookDiscount!=null and bookDiscount!=''">BOOK_DISCOUNT=#{bookDiscount} and</if>
+			<if test="bookOrignalPrice!=null and bookOrignalPrice!=''">BOOK_ORIGINALPRICE=#{bookOrignalPrice} and</if>
+			
+			<if test="bookRecolagu!=null and bookRecolagu!=''">BOOK_RECOLAGU=#{bookRecolagu} and</if>
+			<if test="bookDetailedUrl!=null and bookDetailedUrl!=''">BOOK_DETAILED_URL=#{bookDetailedUrl} and</if>
+			<if test="bookBookOpenBook!=null and bookBookOpenBook!=''">BOOK_BOOKOPENBOOK=#{bookBookOpenBook} and</if>
+			<if test="bookPageNumber!=null and bookPageNumber!=''">BOOK_PAGENUMBER=#{bookPageNumber} and</if>
+			<if test="bookIsbn!=null and bookIsbn!=''">BOOK_ISBN=#{bookIsbn} and</if>
+			<if test="bookBarcode!=null and bookBarcode!=''">BOOK_BARCODE=#{bookBarcode} and</if>
+			<if test="bookBinding!=null and bookBinding!=''">BOOK_BINDING=#{bookBinding} and</if>
+			<if test="bookKind!=null and bookKind!=''">BOOK_KIND=#{bookKind} and</if>
+			<if test="bookKingText!=null and bookKingText!=''">BOOK_KINDTEXT=#{bookKingText} and</if>
+			<if test="bookSpeciaList!=null and bookSpeciaList!=''">BOOK_SPECIALIST=#{bookSpeciaList} and</if>
+			<if test="bookBrief!=null and bookBrief!=''">BOOK_BRIEF=#{bookBrief} and</if>
+			<if test="bookCatalog!=null and bookCatalog!=''">BOOK_CATALOG=#{bookCatalog} and</if>
+			<if test="bookExcerpt!=null and bookExcerpt!=''">BOOK_EXCERPT=#{bookExcerpt} and</if>
+			<if test="bookXiangguan!=null and bookXiangguan!=''">BOOK_XIANGGUAN=#{bookXiangguan} and</if>
+			
+			<if test="bookZuoZheJianJie!=null and bookZuoZheJianJie!=''">BOOK_ZUOZHEJIANJIE=#{bookZuoZheJianJie} and</if>
+			<if test="bookCateGoryId!=null and bookCateGoryId!=''">BOOK_CATEGORY_ID=#{bookCateGoryId} and</if>
+			
+		</trim>
+		
+	</sql>
+	<!-- 用于分页查询 -->
+	<sql id="BookQueryPage">
+		<include refid="pageCode"></include>
+	</sql>
+	<sql id="pageCode">
+		and BOOK_ID not in (select top 
+		<choose>
+			<when test="page!=null and page!=''">(#{page}*20)</when>
+			<otherwise> 0 </otherwise>
+		</choose>
+		BOOK_ID from TB_BOOK)
+	</sql>
+	<!-- 查询带条件的所有图书（不分页） -->
+	<select id="selectBookListByQuery" parameterType="map" resultType="com.school.bookshop.model.Book">
+		<include refid="selectBookAll"></include>
+		<include refid="selectBookQuery"></include>
+	</select>
+	<!-- 查询带条件的所有图书（分页） -->
+	<select id="selectBookListByQueryAndNext"  parameterType="map" resultType="com.school.bookshop.model.Book">
+		<include refid="selectBookQueryAndPage"></include>
+		<include refid="BookQueryPage"></include>
+	</select>
+	<!-- 查询带条件的图书数目 -->
+	<select id="selectBookCount" parameterType="map" resultType="Integer">
+		<include refid="selectBookByCount"></include>
+	</select>
+</mapper>
