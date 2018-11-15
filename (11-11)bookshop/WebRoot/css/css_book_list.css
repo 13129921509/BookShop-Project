@@ -160,7 +160,6 @@ a:hover{
 .rudier{
 	height: 90px;
 	width: 1300px;
-	border: 1px solid #666666;
 }
 
 .selectlistdiv{
@@ -171,7 +170,7 @@ a:hover{
     width: 96px;
     line-height:30px;
 	text-align: center;
-
+	display: inline-block;
 }
 .selectlist{
 	float: left;
@@ -500,6 +499,7 @@ a{
 	background: #e60000;
 }
 .icon_down{
+	cursor:pointer;
 	background: url(/Image/childredSprit.png) no-repeat -108px -490px;
 	float: right;
 	height: 30px;

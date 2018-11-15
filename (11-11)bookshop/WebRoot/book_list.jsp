@@ -22,7 +22,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
 	<script type="text/javascript" src="../11-11bookshop/js/jquery.min.js"></script>
 	<script type="text/javascript" src="../11-11bookshop/js/js_hall.js"></script>
-    <link type="text/css" rel="stylesheet" href="../11-11bookshop/css/css_book_list.css">
+    <link type="text/css" rel="stylesheet" id="css_book_list" href="../11-11bookshop/css/css_book_list.css">
   	<script type="text/javascript" src="../11-11bookshop/js/js_book_list.js"></script>
   </head>
   <body onload="init()">
@@ -76,17 +76,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <li><a href="">惊悚/恐怖(795)</a> </li>
                 <li><a href="">惊悚/恐怖(795)</a> </li>
             </ur>
-            <div class="icon_down"><a href=""> <span class="icon_dwon2"></span>展开</a></div>
+            <div class="icon_down"><a> <span class="icon_dwon2"></span><a id="icon_dwon2_a">展开</a></a></div>
         </div>
-        <div class="selectlist">
+        <div class="selectlist" id="selectlist_sell">
             <div class="selectlistdiv">售价：</div>
             <ur>
-                <li><a href="">0-5元126）</a> </li>
-                <li><a href="">5-10元(2686)</a> </li>
-                <li><a href="">10-20元(18275)</a> </li>
-                <li><a href="">20-50(16851)</a> </li>
-                <li><a href="">20-100元(1070)</a> </li>
-                <li><a href="">100元以上(549)</a> </li>
+                <li><a onclick="click__tiaojian_sell(this)">0-5元</a> </li>
+                <li><a onclick="click__tiaojian_sell(this)" value="5-10元">5-10元</a> </li>
+                <li><a onclick="click__tiaojian_sell(this)" value="10-20元">10-20元</a> </li>
+                <li><a onclick="click__tiaojian_sell(this)" value="20-50元">20-50元</a> </li>
+                <li><a onclick="click__tiaojian_sell(this)" value="20-100元">50-100元</a> </li>
+                <li><a onclick="click__tiaojian_sell(this)" value="100元以上">100元以上</a> </li>
             </ur>
             <div class="f1">
                 <i>￥</i>
@@ -137,7 +137,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div class="fenye">
 			
             <ul>
-            	<li><div class="next"><a id="but_pre" onclick="but_pre()">上一页</a></div></li>
+            	<li><div class="pre"><a id="but_pre" onclick="but_pre()">上一页</a></div></li>
                 <li><a href="#"> 1</a> </li>
                 <li><a href="#"> 2</a> </li>
                 <li><a href="#"> 3</a> </li>

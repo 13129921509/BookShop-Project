@@ -158,14 +158,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <div class="category-info">
                         <h3>互联网IT</h3>
                         <p>
-                            <a href="/11-11bookshop/book/1.action" target="_blank">小说</a>
+                            <a href="book/1.action" target="_blank">小说</a>
                             <a href="/11-11bookshop/book/2.action" target="_blank">青春文学</a>
-                            <a href="/kinder/53210000/" target="_blank">中国散文</a>
-                            <a href="/kinder/53140000/" target="_blank">外国散文</a>
-                            <a href="/kinder/54290000/" target="_blank">悬疑推理</a>
-                            <a href="/kinder/53160000/" target="_blank">文学理论</a>
-                            <a href="/kinder/53150000/" target="_blank">文集</a>
-                            <a href="/kinder/54330000/" target="_blank">世界名著</a>
+                            <a href="book/3.action" target="_blank">中国散文</a>
+                            <a href="book/4.action" target="_blank">外国散文</a>
+                            <a href="book/5.action" target="_blank">悬疑推理</a>
+                            <a href="book/6.action" target="_blank">文学理论</a>
+                            <a href="book/7.action" target="_blank">文集</a>
+                            <a href="book/8.action" target="_blank">世界名著</a>
                         </p>
                     </div>
                 </li>

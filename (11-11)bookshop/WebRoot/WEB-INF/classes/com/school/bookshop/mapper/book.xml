@@ -74,7 +74,8 @@
 			
 			<if test="bookZuoZheJianJie!=null and bookZuoZheJianJie!=''">BOOK_ZUOZHEJIANJIE=#{bookZuoZheJianJie} and</if>
 			<if test="bookCateGoryId!=null and bookCateGoryId!=''">BOOK_CATEGORY_ID=#{bookCateGoryId} and</if>
-			
+			<if test="sell_min!=null and sell_min!='' and sell_max!=null and sell_max!=''">CAST(SUBSTRING(BOOK_SELLPRICE,2,LEN(BOOK_SELLPRICE)) AS FLOAT)
+			 							BETWEEN #{sell_min} and #{sell_max}</if>
 		</trim>
 	</sql>
 	<!-- 带条件的搜索（分页） -->
@@ -108,7 +109,8 @@
 			
 			<if test="bookZuoZheJianJie!=null and bookZuoZheJianJie!=''">BOOK_ZUOZHEJIANJIE=#{bookZuoZheJianJie} and</if>
 			<if test="bookCateGoryId!=null and bookCateGoryId!=''">BOOK_CATEGORY_ID=#{bookCateGoryId} and</if>
-			
+			<if test="sell_min!=null and sell_min!='' and sell_max!=null and sell_max!=''">CAST(SUBSTRING(BOOK_SELLPRICE,2,LEN(BOOK_SELLPRICE)) AS FLOAT)
+			 							BETWEEN #{sell_min} and #{sell_max}</if>
 		</trim>
 		
 	</sql>
