@@ -76,13 +76,26 @@ body{
 	z-index: 10;
 }
 
+/*  要修改的div */
 .zp-searchbar__box{
-	width: 950px;
-	float: left;
-	height: 58px;
-	position: relative;
-	font-size: 0;
-	line-height: 58px;
+    width: 950px;
+    height: 58px;
+    position: absolute;
+    font-size: 0;
+    line-height: 58px;
+}
+
+/*  要 添加 */
+.box_serach_bot_info{
+    width: 678px;
+    background-color: white;
+    z-index: 400;
+    position: relative;
+    top:60px;
+    margin: 0;
+    padding: 0;
+    left: 20px;
+    /*display: none;*/
 }
 
 .box-1{
@@ -536,3 +549,187 @@ a{
 	background: url(../Image/childredSprit.png) no-repeat -108px -490px;
 	margin: 5px 0 0 6px;
 }
+
+.box_serach_bot_info_title_a {
+    width: 400px;
+    height: 30px;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+}
+
+.box_serach_bot_info table tr td {
+    width: auto;
+    height: 30px;
+}
+
+.box_serach_bot_info_Id {
+    text-align: right;
+}
+
+.box_serach_bot_info_title {
+    overflow: hidden;
+}
+
+#box_serach_bot_info_id_a {
+    width: 200px;
+    height: 30px;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+}
+
+.box_serach_bot_info_title_all {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+
+
+
+/*tabbar*/
+
+.topBar {
+    background: #f2f2f2;
+    position: relative;
+    z-index: 10;
+}
+
+.clearfix {
+    overflow: hidden;
+}
+.clearfix {
+    zoom: 1;
+    display: block;
+    width: 100%;
+}
+.clearfix {
+    zoom: 1;
+    display: block;
+}
+.clearfix {
+    zoom: 1;
+    display: block;
+}
+
+.w1200 {
+    width: 1200px;
+    margin: auto;
+    height: 40px;
+    line-height: 40px;
+}
+
+.loginArea {
+    float: left;
+    overflow: hidden;
+    line-height: 40px;
+    width: auto;
+}
+
+
+.loginArea b {
+    color: #666666;
+    float: left;
+    width: auto;
+}
+
+.loginArea span {
+    color: #d1d1d1;
+    margin: 0 9px;
+    width: auto;
+}
+
+.loginArea a {
+}
+.bar_user_quit {
+    width: auto;
+    float: none;
+    font-size: 12px;
+    color: red;
+    cursor: pointer;
+}
+.topBar .webTool {
+    float: right;
+    width: auto;
+}
+
+.topBar .webTool ul li {
+    float: left;
+    position: relative;
+    width: 100px;
+    display: inline-block;
+    text-align: center;
+}
+.clearfix li {
+    float: left;
+    width: 182px;
+    overflow: hidden;
+    position: relative;
+}
+
+.topBar .webTool .dt {
+    width: auto;
+    line-height: 10px;
+    display: block;
+    height: 29px;
+    padding: 0 16px 0 16px;
+    border: 1px solid #f2f2f2;
+    border-bottom: none;
+    position: relative;
+    z-index: 10;
+}
+
+.topBar .webTool .drop .dt {
+    padding: 0 26px 0 14px;
+}
+
+.topBar .webTool .dropLayer {
+    box-shadow: 1px 2px 1px rgba(0,0,0,.1);
+    position: absolute;
+    top: 29px;
+    left: 0px;
+    border: 1px solid #dadada;
+    background: #fff;
+    z-index: 9;
+    display: none;
+    padding-left: 12px;
+}
+
+.topBar .webTool .dt .icon {
+    position: absolute;
+    background: url(../img/homeindex.png) no-repeat 0 0;
+    width: 8px;
+    height: 4px;
+    left: 70px;
+    top: 17px;
+}
+
+.topBar .webTool .dropLayer a {
+    float: left;
+    color: #666666;
+    line-height: 24px;
+    margin-bottom: 6px;
+    width: 76px;
+}
+
+.loginArea a.login {
+    color: #e60000;
+    margin-left: 7px;
+    width: auto;
+}
+
+.loginArea a.regist {
+    color: #e60000;
+    width: auto;
+}
+
+
+
+
+
+
+
+
+
+

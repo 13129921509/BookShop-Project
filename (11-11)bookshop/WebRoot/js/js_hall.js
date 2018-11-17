@@ -9,6 +9,8 @@ $(function() {
 	window.history.pushState('forward', null, '#'); //在IE中必须得有这两行
 	window.history.forward(1);
 })*/
+var weapp=new Object();
+weapp.i=4;
 $(function(){
 	$(document).ready(function (){
 		anquantuichu = $('.loginArea')[0].innerHTML;
@@ -18,14 +20,17 @@ $(function(){
 			$('.loginArea')[0].innerHTML="<b>欢迎光临中国图书网  </b><span></span>"
 				+$('#user_session')[0].value
 				+"<span>|</span>"
-				+"<a class='bar_user_quit'>安全退出</a>";
+				+"<a class='bar_user_quit' onclick='quit_user()'>安全退出</a>";
 		}
 		
-		$('.bar_user_quit')[0].onclick=function(){
-			location.href = "user/clearUser.action";
-		}
-	});
 })
+})
+
+
+function quit_user() {
+	location.href = "user/clearUser.action";
+}
+
 
 function init() {
 
@@ -117,10 +122,81 @@ function init() {
         //console.log(window.getComputedStyle($('.zp-main-container-biaoqian')[0]).padding);
         $('.zp-main-container-biaoqian')[0].style.padding = "0px";
     });
-
+    
+/*
+ * 搜索框功能代码
+ * */
+    var sousuoapp=new Object();
+    sousuoapp.info_tr = $('.box_serach_bot_info_table tr')[0].cloneNode(true);
+    $('.zp-searchbar__box input')[0].addEventListener("input", function() {
+    	if($('.zp-searchbar__box input')[0].value == ""){
+    		return;
+    	}
+    	content = $('.zp-searchbar__box input')[0].value;
+    	sousuoapp.mohu_content="";
+    	for(var i = 0 ; i < content.length; i++){
+    		sousuoapp.mohu_content += "%"+content[i];
+    	}
+    	sousuoapp.mohu_content+="%";
+    	if($('#item_var')[0].innerText == "书籍"){
+    		sousuoapp.canshu={
+    				"bookmohutitle":sousuoapp.mohu_content
+    		};
+    	}else if($('#item_var')[0].innerText == "出版社"){
+    		sousuoapp.canshu={
+    				"chubanshe":sousuoapp.mohu_content
+    		};
+    	}else if($('#item_var')[0].innerText == "作者"){
+    		sousuoapp.canshu={
+    				"zuozhe":sousuoapp.mohu_content
+    		};
+    	}
+		
+		
+		$('.box_serach_bot_info_table')[0].innerHTML = "";
+		$.ajax({
+			type:"post",
+			url:"http://localhost:7890/11-11bookshop/search/book_10.action",
+			data:sousuoapp.canshu,
+			dataType:"JSON",
+			success:function(list)
+			{	
+				if(list.length==0){
+					$('.box_serach_bot_info')[0].style.display = "none";
+					return ;
+				}else{
+					$('.box_serach_bot_info')[0].style.display = "block";
+				}
+				for(var i = 0;i < list.length ;i++){
+					tr_info = sousuoapp.info_tr.cloneNode(true);
+					getChildTagByClass(tr_info, "box_serach_bot_info_title_a");
+					weapp.dom_child.innerText = list[i]["bookTitle"];
+					weapp.dom_child.href = "show/"+ list[i]["bookId"]+".action";
+					td_title = weapp.dom_child;
+					tr_info.appendChild(td_title);
+					
+					weapp.dom_child = null;
+					getChildTagByClass(tr_info, "box_serach_bot_info_id_a");
+					weapp.dom_child.innerText = list[i]["bookAuthor"];
+					td_author = weapp.dom_child;
+					tr_info.appendChild(weapp.dom_child);
+					$('.box_serach_bot_info_table')[0].appendChild(tr_info);
+				}
+			}
+		});
+	}, false);
 }
 
 
+/*
+ * 搜索栏失焦事件
+ *///$(document).ready(function () {
+	 //$('.zp-searchbar__box input')[0].addEventListener("blur", function(){
+			//$('.box_serach_bot_info')[0].style.display = "none";
+		//},false);
+ //})
+	
+	
 function pour_tabTit_chirden(v_this) {
     v_this.style.color='red';
     v_this.style.borderTopColor = "red";
@@ -137,16 +213,21 @@ function pour_tabTit_chirden(v_this) {
     }
 
 }
-document.addEventListener("click",function(){
-    if(event){
-        if(event.srcElement.className=='box-1'||event.srcElement.id=='item_var'){
-
-        }else{
-
-            $('.box-1-content')[0].style.display="none";
-
-        }
-    }
+$(document).ready(function() {
+	var scheduleBox1 = document.querySelector('.box_serach_bot_info');
+	var scheduleBox2 = document.querySelector('.box-1');
+	var scheduleBox3 = document.querySelector('#item_var');
+	document.addEventListener("click", function(e){
+		console.log(e.target);
+	     // 判断被点击的元素是不是scheduleInput元素，不是的话，就隐藏之
+	     if( e.target !== scheduleBox1 ){
+	           scheduleBox1.style.display = "none";
+	     }
+	     if(e.target !== scheduleBox2&&e.target !== scheduleBox3){
+	    	 //scheduleBox2.style.display = "none";
+	    	 $('.box-1-content')[0].style.display = "none";
+	     }
+	});
 });
 
 
@@ -169,3 +250,16 @@ $(document).ready(function () {
         }
     })
 });
+/*
+ * 递归实现查找父标签里的子标签
+ * */
+function getChildTagByClass(child_dom,className) {
+	for(var i = 0 ; i < child_dom.children.length;i++){
+		if(child_dom.children[i].className == className){
+			
+			weapp.dom_child = child_dom.children[i];
+		}else{
+			getChildTagByClass(child_dom.children[i],className);
+		}
+	}
+}

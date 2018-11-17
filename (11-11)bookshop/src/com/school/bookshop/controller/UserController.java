@@ -6,10 +6,13 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.io.filefilter.FalseFileFilter;
+import org.junit.runners.Parameterized.Parameter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -47,8 +50,16 @@ public class UserController {
 	 * Çå³ýµ±Ç°user
 	 */
 	@RequestMapping(value="/clearUser")
-	public String reloadAndEliminate(HttpSession session){
+	public String reloadAndEliminate(HttpSession session,HttpServletRequest request){
 		session.removeAttribute("user");
+		String key = request.getParameter("key");
+		if("hall".equals(key)){
+			return "../hall.jsp";
+		}else if(key != null){
+			if("listBook".equals(key.split("_")[0])){
+				return "../book/"+key.split("_")[1]+".action";
+			}
+		}
 		return "../hall.jsp";
 	}
 }

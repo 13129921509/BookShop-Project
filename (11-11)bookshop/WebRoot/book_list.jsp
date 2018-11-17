@@ -21,37 +21,146 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	-->
 	
 	<script type="text/javascript" src="../11-11bookshop/js/jquery.min.js"></script>
-	<script type="text/javascript" src="../11-11bookshop/js/js_hall.js"></script>
     <link type="text/css" rel="stylesheet" id="css_book_list" href="../11-11bookshop/css/css_book_list.css">
   	<script type="text/javascript" src="../11-11bookshop/js/js_book_list.js"></script>
+  	
   </head>
-  <body onload="init()">
-<div class="main_clearfix">
-    <div class="logo">
-        <a> <img src="../11-11bookshop/Image/logo0508.png"> </a>
-    </div>
-    <div class="box_serach_bot">
-        <div class="zp-searchbar__box">
-            <div class="box-1"><a id="item_var">书籍</a>
-                <div class="box-1-content">
-                    <ul>
-                        <li>书籍</li>
-                        <li>出版社</li>
-                        <li>作者</li>
-                    </ul>
-                </div>
+<body>
+<input type="hidden" id="user_session" value="${user.userAccount}">
+<div class="topBar">
+        <div class="w1200 clearfix">
+            <div class="loginArea">
+                <b>欢迎光临中国图书网&nbsp;请</b>
+                <a href="login.jsp?redirect=list_book-${category}" target="_blank" class="login">登录</a>
+                <span>|</span>
+                <a href="register.jsp" target="_blank" class="regist">注册</a>
             </div>
-            <input type="text" class="zp-searchbar__box_input" placeholder="请输入关键词,例如:十万个为什么，歌德等">
-            <a href="javascript:;" class="zp-searchbox__button">搜索</a>
-            <div class="calean_float"></div>
+            <div class="webTool">
+                <ul class="clearfix">
+                    <li>
+                        <div class="dt">
+                            <a href="" target="_blank">购物车</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dt">
+                            <a href="" target="_blank">我的订单</a>
+                        </div>
+                    </li>
+                    <li class="drop">
+                        <div class="dt">
+                            <a href="" target="_blank">我的账户</a>
+                            <b class="icon"></b>
+                        </div>
+                        <div class="dropLayer" style="width: 162px;">
+                            <a href="" target="_blank">我的收藏夹</a>
+                            <a href="" target="_blank">账户余额</a>
+                            <a href="" target="_blank">我的优惠券</a>
+                            <a href="" target="_blank">我的积分</a>
+                            <a href="" target="_blank">收货地址</a>
+                            <a href="" target="_blank">我的书评</a>
+                            <a href="" target="_blank">我的消息</a>
+                            <a href="" target="_blank">积分换券</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dt">
+                            <a href="" target="_blank">帮助中心</a>
+                            <!--<a href="javascript:void(0);" target="_blank">联系客服</a>-->
+                            <!--<b class="icon"></b>-->
+                        </div>
+                        <!--<div class="dropLayer">
+                            <a href="/question/default1.asp" target="_blank">帮助中心</a>
+                        </div>-->
+                    </li>
+
+                    <li class="drop">
+                        <div class="dt">
+                            <a href="" target="_blank">手机中图</a>
+                            <b class="icon"></b>
+                        </div>
+                        <div class="dropLayer" style="right: 0; left: initial; width: 164px; padding-bottom: 7px; padding-left: 5px;">
+                            <div class="erweimaWrap">
+                                <div class="erweima">
+                                    <img src="" alt="中图网微博">
+
+                                </div>
+                                <div class="text">
+                                    <b>扫一扫</b>
+                                    <span>
+                                    关注中图网<br>
+                                    官方微博
+                                </span>
+                                </div>
+                            </div>
+                            <div class="erweimaWrap">
+                                <div class="erweima">
+                                    <img src="" alt="中图网微信">
+                                </div>
+                                <div class="text">
+                                    <b>扫一扫</b>
+                                    <span>
+                                    关注中图网<br>
+                                    微信公众号
+                                </span>
+                                </div>
+                            </div>
+                            <div class="erweimaWrap">
+                                <div class="erweima">
+                                    <img src="" alt="手机中图">
+                                </div>
+                                <div class="text">
+                                    <b>手机中图</b>
+                                    <span>
+                                    进入中图网<br>
+                                    手机触屏版
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
         </div>
     </div>
-    <div class="calean_float"></div>
 
 
-</div>
+<div class="main_clearfix">
+        <div class="logo">
+            <a> <img src="../11-11bookshop/img/logo0508.png"> </a>
+        </div>
+        <div class="box_serach_bot">
+            <div class="zp-searchbar__box" style="margin-left: 250px;">
+                <div class="box-1"><a id="item_var">书籍</a>
+                    <div class="box-1-content" style="display: none;">
+                        <ul style="width: 100%;margin: 0 auto;padding: 0;">
+                            <li>书籍</li>
+                            <li>出版社</li>
+                            <li>作者</li>
+                        </ul>
+                    </div>
+                </div>
+                <input type="text" class="zp-searchbar__box_input" placeholder="请输入关键词,例如:十万个为什么，歌德等">
+                <a href="javascript:;" class="zp-searchbox__button">搜索</a>
+                <div class="calean_float"></div>
+            </div>
+            <div class="box_serach_bot_info" style="display: block;margin:auto;" >
+            	<table class="box_serach_bot_info_table">
+            	<tr class="box_serach_bot_info_tr">
+            			<td id="box_serach_bot_info_title" class="box_serach_bot_info_title">
+            				</td>
+            			<td id="box_serach_bot_info_Id" class="box_serach_bot_info_Id"></td>
+            			</tr></table>
+            	<a id="box_serach_bot_info_title_all" class="box_serach_bot_info_title_all" href="show/318.action">点击查看更多</a>
+            			
+            	
+            </div>	
+        </div>
+        <div class="calean_float"></div>
 
 
+    </div>
 <div class="topdiv">
 <div  class="adress"><a href="http://www.divcss5.com/shili/s731.shtml">中国图书网</a> 》<a href=""> 全部分类</a>》<a href="#">小说</a></div>
     <div class="rudier">
@@ -81,12 +190,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div class="selectlist" id="selectlist_sell">
             <div class="selectlistdiv">售价：</div>
             <ur>
-                <li><a onclick="click__tiaojian_sell(this)">0-5元</a> </li>
-                <li><a onclick="click__tiaojian_sell(this)" value="5-10元">5-10元</a> </li>
-                <li><a onclick="click__tiaojian_sell(this)" value="10-20元">10-20元</a> </li>
-                <li><a onclick="click__tiaojian_sell(this)" value="20-50元">20-50元</a> </li>
-                <li><a onclick="click__tiaojian_sell(this)" value="20-100元">50-100元</a> </li>
-                <li><a onclick="click__tiaojian_sell(this)" value="100元以上">100元以上</a> </li>
+                <li><a onclick="click__tiaojian_sell(this,'sell')">0-5元</a> </li>
+                <li><a onclick="click__tiaojian_sell(this,'sell')" value="5-10元">5-10元</a> </li>
+                <li><a onclick="click__tiaojian_sell(this,'sell')" value="10-20元">10-20元</a> </li>
+                <li><a onclick="click__tiaojian_sell(this,'sell')" value="20-50元">20-50元</a> </li>
+                <li><a onclick="click__tiaojian_sell(this,'sell')" value="20-100元">50-100元</a> </li>
+                <li><a onclick="click__tiaojian_sell(this,'sell')" value="100元以上">100元以上</a> </li>
             </ur>
             <div class="f1">
                 <i>￥</i>
@@ -97,14 +206,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <a id="btnpriceSerch" href="javascript:void(0);">确定</a>
             </div>
         </div>
-        <div class="selectlist">
+        <div class="selectlist" id="selectlist_discount">
             <div class="selectlistdiv">折扣：</div>
             <ur>
-                <li><a href="">3折以下（343）</a> </li>
-                <li><a href="">3-4折(2468)</a> </li>
-                <li><a href="">4-53折(10546)</a> </li>
-                <li><a href="">5-7折(20031)</a> </li>
-                <li><a href="">7折以上(6169)</a> </li>
+                <li><a onclick="click__tiaojian_sell(this,'discount')">3折以下</a> </li>
+                <li><a onclick="click__tiaojian_sell(this,'discount')">3-4折</a> </li>
+                <li><a onclick="click__tiaojian_sell(this,'discount')">4-5折</a> </li>
+                <li><a onclick="click__tiaojian_sell(this,'discount')">5-7折</a> </li>
+                <li><a onclick="click__tiaojian_sell(this,'discount')">7折以上</a> </li>
             </ur>
         </div>
     </div>

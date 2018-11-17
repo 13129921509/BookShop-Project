@@ -20,6 +20,7 @@ public class BookServiceImpl implements BookService{
 	public List<Book> getBoosCategory_next(Map<String, Object> map, int page) {
 		// TODO Auto-generated method stub
 		map.put("page", page);
+		Book map2 = bookDao.selectBookListByQueryAndNext(map).get(0);
 		return bookDao.selectBookListByQueryAndNext(map);
 	}
 	

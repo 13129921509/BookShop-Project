@@ -100,4 +100,5 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
     </div>
   </body>
-</html>
+  <input type="hidden" id="redirect" value="<%=request.getParameter("redirect")%>">
+  </html>

@@ -33,14 +33,62 @@ body{
     width: 950px;
     height: 58px;
 }
+
+/*  要修改的div */
 .zp-searchbar__box{
     width: 950px;
     height: 58px;
-    position: relative;
+    position: absolute;
     font-size: 0;
     line-height: 58px;
 }
 
+/*  要 添加 */
+.box_serach_bot_info{
+    width: 678px;
+    background-color: white;
+    z-index: 400;
+    position: relative;
+    top:60px;
+    padding: 0;
+    left: -54px;
+    display: none;
+    /*display: none;*/
+}
+.box_serach_bot_info_title{
+	overflow: hidden;
+}
+
+.box_serach_bot_info table{
+	width:100%;
+	text-align: center;
+}
+.box_serach_bot_info table tr{
+	width: 100%;
+}
+
+.box_serach_bot_info table tr td{
+	width: auto;
+	height: 30px;
+}
+
+
+
+#box_serach_bot_info_id_a{
+	width: 200px;
+	height: 30px;
+	display: inline-block;
+	text-align: center;
+	line-height: 30px;
+}
+.box_serach_bot_info_title_a{
+	width: 400px;
+	height: 30px;
+	display: inline-block;
+	text-align: center;
+	line-height: 30px;
+	
+}
 .box-1{
     height: 56px;
     background-color: white;
@@ -56,6 +104,9 @@ body{
     margin-top: 2px;
 }
 
+.box_serach_bot_info_Id{
+	text-align: right;
+}
 .box-1-content{
     display: none;
     position: absolute;
@@ -606,4 +657,10 @@ ol{
 
 .category-info a:hover{
     color: red;
+}
+
+.box_serach_bot_info_title_all{
+	width: 100%;
+	display: inline-block;
+    text-align: center;
 }

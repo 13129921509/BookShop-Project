@@ -110,7 +110,9 @@
 			<if test="bookZuoZheJianJie!=null and bookZuoZheJianJie!=''">BOOK_ZUOZHEJIANJIE=#{bookZuoZheJianJie} and</if>
 			<if test="bookCateGoryId!=null and bookCateGoryId!=''">BOOK_CATEGORY_ID=#{bookCateGoryId} and</if>
 			<if test="sell_min!=null and sell_min!='' and sell_max!=null and sell_max!=''">CAST(SUBSTRING(BOOK_SELLPRICE,2,LEN(BOOK_SELLPRICE)) AS FLOAT)
-			 							BETWEEN #{sell_min} and #{sell_max}</if>
+			 							BETWEEN #{sell_min} and #{sell_max} and</if>
+			<if test="min_discount!=null and min_discount!='' and max_discount!=null and max_discount!=''">CAST(SUBSTRING(BOOK_DISCOUNT,2,LEN(BOOK_DISCOUNT)-3) AS FLOAT)
+			 							BETWEEN #{min_discount} and #{max_discount}</if>
 		</trim>
 		
 	</sql>

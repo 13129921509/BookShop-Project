@@ -15,3 +15,17 @@ SELECT top 20
 		FROM TB_BOOK
 		where BOOK_CATEGORY_ID = 1 and cast(SUBSTRING(BOOK_SELLPRICE,2,LEN(BOOK_SELLPRICE)) as float) between 100 and 2147483647
 			and BOOK_ID not in (select top 0 BOOK_ID from TB_BOOK) 
+
+
+
+
+SELECT top 20
+		 BOOK_TITLE
+		FROM TB_BOOK
+		where BOOK_CATEGORY_ID = 1 and cast(SUBSTRING(BOOK_SELLPRICE,2,LEN(BOOK_SELLPRICE)) as float) between 100 and 2147483647
+			and BOOK_ID not in (select top 0 BOOK_ID from TB_BOOK) 
+			SELECT TOP 10 BOOK_TITLE as bookTitle,BOOK_ID as bookId FROM TB_BOOK
+			where BOOK_TITLE like '%Èý%'
+
+			SELECT TOP 10 BOOK_TITLE as bookTitle,BOOK_ID as bookId FROM TB_BOOK where BOOK_TITLE LIKE '%Èý%¹ú%'
+			SELECT TOP 10 BOOK_TITLE as bookTitle,BOOK_ID as bookId FROM TB_BOOK where BOOK_TITLE LIKE '%

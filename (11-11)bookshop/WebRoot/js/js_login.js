@@ -29,7 +29,13 @@ function init() {
         			if(date.code == 0){
         				alert(date.content);
         			}else{
-        				location.href = "hall.jsp";
+        				if($('#redirect')[0].value == "null"){
+        					location.href = "hall.jsp";
+        				}else if($('#redirect')[0].value == "hall"){
+            				location.href = "hall.jsp";
+        				}else if($('#redirect')[0].value.split('-')[0] == "list_book"){
+        					location.href = "book/"+$('#redirect')[0].value.split('-')[1]+".action";
+        				}
         			}
         		});
     };

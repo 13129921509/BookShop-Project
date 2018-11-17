@@ -19,10 +19,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-	<link type="text/css" rel="stylesheet" href="../11-11bookshop/css/css_topBar.css">
-	<link type="text/css" rel="stylesheet" href="../11-11bookshop/css/css_hall.css">
-    <script type="text/javascript" src="../11-11bookshop/js/jquery.min.js"></script>
-    <script type="text/javascript" src="../11-11bookshop/js/js_hall.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/css_topBar.css">
+	<link type="text/css" rel="stylesheet" href="css/css_hall.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/js_hall.js"></script>
   </head>
   
   <input type="hidden" id="user_session" value="${user.userAccount}">
@@ -31,7 +31,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div class="w1200 clearfix">
             <div class="loginArea">
                 <b>欢迎光临中国图书网&nbsp;请</b>
-                <a href="login.jsp" target="_blank" class="login">登录</a>
+                <a href="login.jsp?redirect=hall" target="_blank" class="login">登录</a>
                 <span>|</span>
                 <a href="register.jsp" target="_blank" class="regist">注册</a>
             </div>
@@ -144,6 +144,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <a href="javascript:;" class="zp-searchbox__button">搜索</a>
                 <div class="calean_float"></div>
             </div>
+            <div class="box_serach_bot_info">
+            	<table class="box_serach_bot_info_table">
+            		<tr class="box_serach_bot_info_tr">
+            			<td id="box_serach_bot_info_title" class="box_serach_bot_info_title">
+            				<a id="box_serach_bot_info_title_a" class="box_serach_bot_info_title_a"></a></td>
+            			<td id="box_serach_bot_info_Id" class="box_serach_bot_info_Id">
+            				<a id="box_serach_bot_info_id_a" class="box_serach_bot_info_id_a"></a></td>
+            		</tr>
+					
+            	</table>
+    			
+            	<a id="box_serach_bot_info_title_all" class="box_serach_bot_info_title_all" href="show/318.action">点击查看更多</a>
+            			
+            	
+            </div>	
         </div>
         <div class="calean_float"></div>
 
