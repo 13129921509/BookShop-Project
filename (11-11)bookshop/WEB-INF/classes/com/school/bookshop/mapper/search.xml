@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.school.bookshop.dao.SearchDao">
+	<sql id="selectAllBook">
+		SELECT BOOK_TITLE FROM TB_BOOK
+	</sql>
+	<sql id="selectBookQuery">
+		<trim prefix="where" suffixOverrides="and|or">
+			<if test="bookmohutitle!=null and bookmohutitle!=''">BOOK_TITLE LIKE #{bookmohutitle} and</if>
+			<if test="chubanshe!=null and chubanshe!=''">BOOK_PUBLISER LIKE #{chubanshe} and</if>
+			<if test="zuozhe!=null and zuozhe!=''">BOOK_AUTHOR LIKE #{zuozhe} and</if>
+		</trim>
+	</sql>
+	<select id="getPre10BookByBookPara" parameterType="map" resultType="map">
+		SELECT TOP 10 BOOK_TITLE as bookTitle,BOOK_ID as bookId,BOOK_AUTHOR as bookAuthor FROM TB_BOOK
+		<include refid="selectBookQuery"></include>
+	</select>
+</mapper>
