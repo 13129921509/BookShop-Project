@@ -17,10 +17,17 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.mail.MailSender;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.test.context.ContextConfiguration;
 
 import com.school.bookshop.service.UserService;
-
+@ContextConfiguration(classes={RootConfig.class})
 public class UserServiceTest extends BaseSpringTest4{
 	Logger logger = Logger.getLogger(UserServiceTest.class);
 	@Autowired
@@ -291,4 +298,6 @@ public class UserServiceTest extends BaseSpringTest4{
 
 		}));
 	}
+
+
 }

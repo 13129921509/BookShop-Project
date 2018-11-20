@@ -76,8 +76,22 @@
 			<if test="bookCateGoryId!=null and bookCateGoryId!=''">BOOK_CATEGORY_ID=#{bookCateGoryId} and</if>
 			<if test="sell_min!=null and sell_min!='' and sell_max!=null and sell_max!=''">CAST(SUBSTRING(BOOK_SELLPRICE,2,LEN(BOOK_SELLPRICE)) AS FLOAT)
 			 							BETWEEN #{sell_min} and #{sell_max}</if>
+			<if test="bookmohutitle!=null and bookmohutitle!=''">BOOK_TITLE LIKE #{bookmohutitle} and</if>
+			<if test="chubanshe!=null and chubanshe!=''">BOOK_PUBLISER LIKE #{chubanshe} and</if>
+			<if test="zuozhe!=null and zuozhe!=''">BOOK_AUTHOR LIKE #{zuozhe} and</if>
 		</trim>
 	</sql>
+	
+	<sql id="searchBookQuery">
+		<trim prefix="where" suffixOverrides="and|or">
+			<if test="bookmohutitle!=null and bookmohutitle!=''">BOOK_TITLE LIKE #{bookmohutitle} and</if>
+			<if test="chubanshe!=null and chubanshe!=''">BOOK_PUBLISER LIKE #{chubanshe} and</if>
+			<if test="zuozhe!=null and zuozhe!=''">BOOK_AUTHOR LIKE #{zuozhe} and</if>
+		
+		</trim>
+	</sql>
+	
+	
 	<!-- 带条件的搜索（分页） -->
 	<sql id="selectBookQueryAndPage">
 		<include refid="selectBookByPage"></include>
@@ -113,6 +127,9 @@
 			 							BETWEEN #{sell_min} and #{sell_max} and</if>
 			<if test="min_discount!=null and min_discount!='' and max_discount!=null and max_discount!=''">CAST(SUBSTRING(BOOK_DISCOUNT,2,LEN(BOOK_DISCOUNT)-3) AS FLOAT)
 			 							BETWEEN #{min_discount} and #{max_discount}</if>
+			<if test="bookmohutitle!=null and bookmohutitle!=''">BOOK_TITLE LIKE #{bookmohutitle} and</if>
+			<if test="chubanshe!=null and chubanshe!=''">BOOK_PUBLISER LIKE #{chubanshe} and</if>
+			<if test="zuozhe!=null and zuozhe!=''">BOOK_AUTHOR LIKE #{zuozhe} and</if>
 		</trim>
 		
 	</sql>

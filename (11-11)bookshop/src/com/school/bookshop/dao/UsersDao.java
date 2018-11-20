@@ -8,4 +8,5 @@ public interface UsersDao {
 	public List<Map<String,Object>> esitUsers(Map<String,Object> map);
 	public List<Map<String,Object>> judgeUsersPassword(Map<String,Object> map);
 	public Users getUser(Map<String,Object> map);
+	public void insertUser(Map<String,Object> map);
 }

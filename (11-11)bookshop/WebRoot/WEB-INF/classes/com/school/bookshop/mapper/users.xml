@@ -9,6 +9,7 @@
    	<trim prefix="where" suffixOverrides="and|or">
    		<if test="userName != null and userName != ''">USERS_ACCOUNT=#{userName} and</if>
    		<if test="password != null and password != ''">USERS_PASSWORD=#{password} and</if>
+   		<if test="email != null and email != ''">USERS_EMAIL=#{email} and</if>
    	</trim>
    </sql>
    <sql id="SelectUserName">
@@ -31,4 +32,8 @@
    		<include refid="SelectAllUser"></include>
    		<include refid="SelectUserQuery"></include>
    </select>
+   
+   <insert id="insertUser" parameterType="map">
+   INSERT INTO TB_USERS VALUES(#{username},#{password},'正常',#{email})
+   </insert>
 </mapper> 

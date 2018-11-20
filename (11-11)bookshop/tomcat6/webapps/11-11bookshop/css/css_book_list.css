@@ -1,0 +1,735 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	font-size: 12px;
+	background: #fff;
+	width: 1300px;
+	margin:auto;
+    font-family: Arial,Verdana,"宋体";
+}
+
+.box-1-content{
+	display: none;
+	position: absolute;
+	right: 0;
+	top: 58px;
+	width: 83px;
+	background-color: black;
+	z-index: 100;
+}
+
+.box-1-content ul{
+	width: 100%;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-top: none;
+}
+
+.box-1-content ul li{
+	display: inline-block;
+	width: 100%;
+	background-color: #fff;
+	line-height: 30px;
+}
+
+.box-1-content ul li:hover{
+	cursor: pointer;
+	background-color: #cccccc;
+	color: red;
+}
+
+.zp-searchbar__box_input{
+	height: 56px;
+	width: 675px;
+	vertical-align: top;
+	display: inline-block;
+	border: 1px solid #ccc;
+	text-indent: 20px;
+	font-size: 16px;
+	margin-top: 2px;
+}
+
+.zp-searchbox__button{
+	display: inline-block;
+	width: 98px;
+	line-height: 56px;
+	height: 56px;
+	background:#1787fb;
+	text-align: center;
+	color: #fff;
+	font-size: 18px;
+	margin-top: 2px;
+	margin-left: 5px;
+}
+.zp-searchbox__button{
+	text-decoration: none;
+
+}
+
+.main_clearfix{
+	margin-top: 20px;
+	zoom: 1;
+	height: 100px;
+	display: block;
+	width: 100%;
+	z-index: 10;
+}
+
+/*  要修改的div */
+.zp-searchbar__box{
+    width: 950px;
+    height: 58px;
+    position: absolute;
+    font-size: 0;
+    line-height: 58px;
+}
+
+/*  要 添加 */
+.box_serach_bot_info{
+    width: 678px;
+    background-color: white;
+    z-index: 400;
+    position: relative;
+    top:60px;
+    margin: 0;
+    padding: 0;
+    left: 20px;
+    /*display: none;*/
+}
+
+.box-1{
+	height: 56px;
+	background-color: white;
+	width: 81px;
+	cursor: pointer;
+	color:#495060;
+	font-size: 16px;
+	display: inline-block;
+	position: relative;
+	border: 1px solid #ccc;
+	text-align: center;
+	line-height: 56px;
+	margin-top: 2px;
+}
+
+.logo{
+	float: left;
+	width: 212px;
+	height:64px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.logo img{
+	width: 100%;
+	height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.topdiv{
+	font-size: 12px;
+	background: #fff;
+	width: 1300px;
+	margin:auto;
+	font-family: Arial,Verdana,"宋体";
+}
+
+a:hover{
+	color:#BA2636;
+	text-decoration: none;
+	border-bottom: none	;
+	
+	}
+
+.rudier{
+	height: 90px;
+	width: 1300px;
+}
+
+.selectlistdiv{
+	background: #f3f3f3;
+	font-weight: bold;
+    color: #333333;
+	float: left;
+    width: 96px;
+    line-height:30px;
+	text-align: center;
+	display: inline-block;
+}
+.selectlist{
+	float: left;
+	background: #fff;
+	height: 30px;
+	width: 1300px;
+    overflow: hidden;
+	border-bottom: 1px solid gray;
+
+}
+
+.selectlist ur{
+	display:block;
+	overflow: hidden;
+	padding-left: 16px;
+	max-width: 990px;
+	float: left;
+}
+.selectlist ur li{
+
+	list-style: none;
+	float: left;
+	line-height:30px;
+	margin-right: 37px;
+}
+a{
+	text-decoration:none;
+}
+.selectlist ur li a{
+	    text-decoration: none;
+		color:gray;
+		display: inline-block;
+}
+
+.f1{
+	float: left;
+	margin-top:5px;
+	text-align: center;
+	width: 240px;
+	height: 20px;
+}
+
+.input-txt{
+	font-family: 'Microsoft YaHei';
+	border: 1px solid #cccccc;
+	width: 50px;
+	height: 16px;
+	vertical-align: middle;
+	color: #666;
+	background: #fff;
+	text-indent: 3px;
+	line-height: 18px;
+}
+
+.booklist ur li.s1{
+	border:1px solid #D9D8D8;
+}
+.booklist ur li.s2{
+	border:none;
+}
+
+.booklist{
+	margin: 0px;
+	padding: 0;
+	width: 1000px;
+    float: left;
+	display: inline;
+}
+.cover{
+	height: 250px;
+	width: 200px;
+	float: left;
+	margin: auto;
+	text-align: center;
+}
+.booklist ur li {
+	margin-top: 20px;
+	margin-left: 10px;
+	list-style: none;
+	border-bottom: none;
+}
+
+.name {
+	font-size: 10px;
+	overflow: hidden;
+	font-weight: normal;
+	line-height: 16px;
+}
+
+
+.priceworp{
+	height: 30px;
+	line-height: 30px;
+	vertical-align: bottom;
+	height: 30px;
+	line-height: 30px;
+	vertical-align: bottom;
+}
+.sellprice{
+	font-size: 18px;
+	color: #e60000;
+	margin-right: 10px;
+	font-family: 'Microsoft YaHei';
+}
+.recoLagu{
+	line-height: 30px;
+	color: #666666;
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+.oparateButton{
+	height: 35px;
+}
+.buyButton {
+	float: left;
+	display: inline-block;
+	color: #fff;
+	text-decoration: none;
+	width: 85px;
+	height: 30px;
+	background: url(../Image/childredSprit.png) no-repeat -164px -452px;
+	text-align: center;
+	margin-top: 3px;
+	line-height: 30px;
+	padding-left: 15px;
+}
+
+.collectBtn{
+	border: 1px solid #999;
+	height: 30px;
+	display: inline-block;
+	border-radius: 5px;
+	color: #999;
+	margin-left: 10px;
+	line-height: 26px;
+	text-align: center;
+	width: 46px;
+	margin-top: 1px;
+	text-decoration: none;
+}
+
+
+.rightdiv{
+    border: 1px solid #e9e9e9;
+    float: right;
+    width: 280px;
+    height: 1000px;
+    margin-top: 20px;
+}
+
+.rightdiv ur li{
+	border-bottom: none;
+	text-align: center;
+	list-style: none;
+	margin-top: 15px;
+}
+
+
+
+.benlei{
+    height: 53px;
+    line-height: 53px;
+    border-bottom: 1px solid #e9e9e9;
+    background: #eae6e6;;
+    text-indent: 15px;
+    color: #333333;
+    font-size: 16px;
+	margin-bottom: 20px;
+    font-family: 'Microsoft YaHei';
+    font-weight: normal;
+}
+
+.rightinfo{
+	padding: auto;
+	text-align: left;
+	height: 80px;
+	overflow: hidden;
+	line-height: 20px;
+	font-weight: normal;
+
+}
+.rightinfo h3{
+	margin: auto;
+	margin-left: 25px;
+	text-align: left;
+}
+.maginright{
+	margin-left: 25px;
+}
+.rightsellprice{
+	font-size: 18px;
+	color: #e60000;
+	font-family: 'Microsoft YaHei';
+}
+
+
+.rightinfo span{
+	height: 40px;
+	line-height: 20px;
+	overflow: hidden;
+}
+
+.fenye{
+	position: relative;
+	float: right;
+	width: 500px;
+	margin-right: 200px;
+}
+
+.fenye ur {
+	margin-left: 30px;
+	float: left;
+	display: block;
+	list-style: none;
+	border-bottom: none;
+}
+.fenye ur li{
+	text-align: center;
+	margin-top: 10px;
+	margin-left: 10px;
+	float: left;
+	width: 15px;
+	display: block;
+	list-style: none;
+	background: none;
+	border: 1px solid #e9e9e9;
+	border-bottom: none;
+}
+
+.fenye ur li:hover{
+	background: #BA2636;
+	border-color: #e60000;
+	color: black;
+}
+.next:hover{
+	background: #BA2636;
+}
+.next{
+	text-align: center;
+	background:#eaeaea;
+	width: 50px;
+}
+.p-skip{
+	float: left;
+	width: 250px;
+	line-height: 28px;
+	margin-top: 3px;
+	font-size: 12px;
+	margin-left: 40px;
+	color: #666;
+}
+.yeshu{
+	width: 40px;
+}
+.button1{
+	float:right;
+	height: 20px;
+	margin-top: 3px;
+	padding-bottom: 2px;
+	margin-right: 60px;
+	display: block;
+	background: #999999;
+	width: 40px;
+	text-align: center;
+}
+.bookbotton{
+	height: 500px;
+	width: 300px;
+	margin-top: 1000px;
+}
+.benzhan{
+	position: relative;
+	height: 53px;
+	width: 1300px;
+	line-height: 53px;
+	border-bottom: 2px solid darkturquoise;
+	background: palegreen;
+	text-indent: 15px;
+	color: #333333;
+	font-size: 16px;
+	margin-bottom: 20px;
+	font-family: 'Microsoft YaHei';
+	font-weight: normal;
+}
+
+.imgdiv ur li:hover{
+	border:1px solid #D9D8D8;
+}
+.imgdiv ur li:hover {
+	border: none;
+}
+
+.imgdiv{
+	float: left;
+	width: 1300px;
+	height: 330px;
+	margin-top: 20px;
+}
+.imgdiv ur{
+	height: 325px;
+	float: left;
+	width: 1300px;
+ }
+.imgdiv ur li{
+	overflow: hidden;
+	float: left;
+	width: 200px;
+	height: 300px;
+	text-align: center;
+	list-style: none;
+}
+.imgdiv ur li:hover{
+	border: 1px solid #D9D8D8;
+}
+.buycar{
+	margin-left: 0px;
+	display: block;
+	width: 100px;
+	height: 20px;
+	text-align: center;
+	background: #e1f7ff;
+	color: #666666;
+	text-decoration: none;
+}
+.buycar:hover{
+	background: #e60000;
+}
+.icon_down{
+	cursor:pointer;
+	background: url(/Image/childredSprit.png) no-repeat -108px -490px;
+	float: right;
+	height: 30px;
+	margin-right: 20px;
+	text-align: center;
+	width: 60px;
+}
+
+.bottoninfo{
+	padding: auto;
+	text-align: left;
+	height: 80px;
+	overflow: hidden;
+	line-height: 20px;
+	font-weight: normal;
+}
+.bottoninfo h3{
+	margin: 0px;
+	margin-left: 20px;
+}
+
+.lisece{
+	margin-top: 350px;
+	height: 100px;
+	width: 1300px;
+	text-align: center;
+}
+
+
+.icon_dwon2{
+	float: right;
+	width: 9px;
+	height: 5px;
+	background: url(../Image/childredSprit.png) no-repeat -108px -490px;
+	margin: 5px 0 0 6px;
+}
+
+.box_serach_bot_info_title_a {
+    width: 400px;
+    height: 30px;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+}
+
+.box_serach_bot_info table tr td {
+    width: auto;
+    height: 30px;
+}
+
+.box_serach_bot_info_Id {
+    text-align: right;
+}
+
+.box_serach_bot_info_title {
+    overflow: hidden;
+}
+
+#box_serach_bot_info_id_a {
+    width: 200px;
+    height: 30px;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+}
+
+.box_serach_bot_info_title_all {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+
+
+
+/*tabbar*/
+
+.topBar {
+    background: #f2f2f2;
+    position: relative;
+    z-index: 10;
+}
+
+.clearfix {
+    overflow: hidden;
+}
+.clearfix {
+    zoom: 1;
+    display: block;
+    width: 100%;
+}
+.clearfix {
+    zoom: 1;
+    display: block;
+}
+.clearfix {
+    zoom: 1;
+    display: block;
+}
+
+.w1200 {
+    width: 1200px;
+    margin: auto;
+    height: 40px;
+    line-height: 40px;
+}
+
+.loginArea {
+    float: left;
+    overflow: hidden;
+    line-height: 40px;
+    width: auto;
+}
+
+
+.loginArea b {
+    color: #666666;
+    float: left;
+    width: auto;
+}
+
+.loginArea span {
+    color: #d1d1d1;
+    margin: 0 9px;
+    width: auto;
+}
+
+.loginArea a {
+}
+.bar_user_quit {
+    width: auto;
+    float: none;
+    font-size: 12px;
+    color: red;
+    cursor: pointer;
+}
+.topBar .webTool {
+    float: right;
+    width: auto;
+}
+
+.topBar .webTool ul li {
+    float: left;
+    position: relative;
+    width: 100px;
+    display: inline-block;
+    text-align: center;
+}
+.clearfix li {
+    float: left;
+    width: 182px;
+    overflow: hidden;
+    position: relative;
+}
+
+.topBar .webTool .dt {
+    width: auto;
+    line-height: 10px;
+    display: block;
+    height: 29px;
+    padding: 0 16px 0 16px;
+    border: 1px solid #f2f2f2;
+    border-bottom: none;
+    position: relative;
+    z-index: 10;
+}
+
+.topBar .webTool .drop .dt {
+    padding: 0 26px 0 14px;
+}
+
+.topBar .webTool .dropLayer {
+    box-shadow: 1px 2px 1px rgba(0,0,0,.1);
+    position: absolute;
+    top: 29px;
+    left: 0px;
+    border: 1px solid #dadada;
+    background: #fff;
+    z-index: 9;
+    display: none;
+    padding-left: 12px;
+}
+
+.topBar .webTool .dt .icon {
+    position: absolute;
+    background: url(../img/homeindex.png) no-repeat 0 0;
+    width: 8px;
+    height: 4px;
+    left: 70px;
+    top: 17px;
+}
+
+.topBar .webTool .dropLayer a {
+    float: left;
+    color: #666666;
+    line-height: 24px;
+    margin-bottom: 6px;
+    width: 76px;
+}
+
+.loginArea a.login {
+    color: #e60000;
+    margin-left: 7px;
+    width: auto;
+}
+
+.loginArea a.regist {
+    color: #e60000;
+    width: auto;
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,9 +1,8 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<%
+<% 
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -24,7 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="stylesheet" type="text/css" href="../11-11bookshop/css/css_register.css">
   </head>
   
- <body onload="init()">
+ <body>
 <!-- 头部（logo，修饰） -->
 <div class="loginHead">
     <div class="logoBar">
@@ -53,45 +52,36 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <div class="loginInputWrap">
                 <div class="loginusername">
                     <a>手机号码:</a>
-                    <input placeholder="请输入你的常用手机号码" id="inputusernameid" type="text" onfocus="show(this.id)" onblur="check(this.id)"/>
+                    <input name="userName" placeholder="请输入你的常用手机号码" id="inputusernameid" type="text" onfocus="show(this.id)" onblur="check(this.id)"/>
                 </div>
                 <div class="loginusernameerror" id="loginusernameerror" data-defaultmeg="请输入常用手机号码">
                 </div>
                 <div class="loginpassword">
                     <a>设置密码:</a>
-                    <input placeholder="请输入密码"  class="inputpassword" id="inputpasswordid" type="text" onfocus="showPassWord()" onblur="checkPassWord()"/>
+                    <input name="password" placeholder="请输入密码"  class="inputpassword" id="inputpasswordid" type="password" onfocus="showPassWord()" onblur="checkPassWord()"/>
                 </div>
                 <div class="loginpasswroderror" id="loginpasswroderrorid" data-defaultmeg="请输入密码">
                 </div>
                 <div class="loginpassword">
                     <a>确认密码:</a>
-                    <input placeholder="请再次输入密码"  class="inputpassword" id="inputRepasswordid"type="text" onfocus="showRePassWord()" onblur="checkRePassWord()"/>
+                    <input placeholder="请再次输入密码"  class="inputpassword" id="inputRepasswordid"type="password" onfocus="showRePassWord()" onblur="checkRePassWord()"/>
                 </div>
-                <div class="loginrepasswrodeerror" id="loginrepasswrodeerrorid" data-defaultmeg="请再次输入密码">
+                <div class="loginEmail">
+                    <a>邮箱:</a>
+                    <input name="email" placeholder="请输入邮箱"  class="inputEmail" id="inputEmail" type="text"/>
                 </div>
-                <div class="labInpWr">
-                    <div class="logincodewrap">
-                        <a>验证码:</a>
-                        <input placeholder="图片验证码" class="inputyzm"  id="inputyzmid" type="text" onfocus="showYanZhengMa()" onblur="checkYanZhenMa()"/>
-                    </div>
-                    <div class="LoginYzm">
-                        <img src="Image/YzmCode.jpg" alt="验证码">
-                    </div>
-                    <div class="changeImgCoad"><a>换一换</a></div>
-                </div>
-                <div class="loginyanzhenerror" id="loginyanzhenerrorid"  data-defaultmeg="请输入验证码">
-                </div>
-                <div class="loginphone">
+                                <div class="loginphone">
                     <div class="labelphone">
-                        <a>手机验证码：</a>
-                        <input placeholder="请输入验证码" class="phone" id="Phoneid" type="textg" onfocus="showPhone()" onblur="checkPhone()" />
-                        <div class="vertical">
+                        <a style="float: left">邮箱验证码：</a>
+                        <input placeholder="请输入验证码"  style="float: left;margin-top: 20px" class="phone" id="Emailid" type="textg" onfocus="showPhone()" onblur="checkPhone()" />
+                        <div  style="float: left;margin-left: 20px;" class="vertical" onclick="getYzm()">
                             获取验证码</div>
                     </div>
                 </div>
-                <div class="loginphoneerror" id="loginphoneerrorid" data-defaultmeg="请输入手机验证码">
-                </div>
+                
             </div>
+                </div>
+
             <div class="loginButton">
                 <div class="loginButtonInner">
                     <a class="loginEnter" onclick="reonclick()">注册</a>

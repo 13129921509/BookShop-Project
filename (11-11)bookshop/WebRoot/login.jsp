@@ -20,9 +20,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 	<title>登录</title>
-    <link rel="stylesheet" type="text/css" href="http://localhost:7890/11-11bookshop/css/css_login.css">
-    <script type="text/javascript" src="http://localhost:7890/11-11bookshop/js/jquery.min.js"></script>
-    <script type="text/javascript" src="../11-11bookshop/js/js_login.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/css_login.css">
+    <script type="text/javascript" src="js/jquery.min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="js/js_login.js"></script>
   </head>
   
   <body onload="init()">
@@ -31,7 +31,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div class="logoBar">
             <div class="logoBarInner">
                 <div class="logo">
-                    <a> <img src="http://localhost:7890/11-11bookshop/img/logo0508.png"> </a>
+                    <a> <img src="img/logo0508.png"> </a>
                 </div>
                 <div class="ad">
                     <span class="zhengbang">正版好图书</span>
@@ -58,7 +58,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <a id="msg_username"></a>
                     <div class="loginpassword">
                         <a>密码:</a>
-                        <input placeholder="密码" name="password" class="inputpassword" type="text"/>
+                        <input placeholder="密码" name="password" class="inputpassword" type="password"/>
                     </div>
                     <a id="msg_password"></a>
                     <div class="labInpWr">
@@ -67,7 +67,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         <input placeholder="图片验证码" class="inputyzm" type="text"/>
                     </div>
                         <div class="LoginYzm">
-                        <img src="http://localhost:7890/11-11bookshop/img/YzmCode.jpg" alt="验证码">
+                        <img src="img/YzmCode.jpg" alt="验证码">
                     </div>
                         <div class="changeimgCoad"><a>换一换</a></div>
                     </div>

@@ -24,6 +24,7 @@ public class BookServiceImpl implements BookService{
 		return bookDao.selectBookListByQueryAndNext(map);
 	}
 	
+	
 	public int getBookCategoryCount(Map<String, Object> map){
 		return bookDao.selectBookCount(map);
 	}

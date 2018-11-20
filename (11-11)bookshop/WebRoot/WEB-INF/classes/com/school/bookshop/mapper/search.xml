@@ -12,7 +12,21 @@
 		</trim>
 	</sql>
 	<select id="getPre10BookByBookPara" parameterType="map" resultType="map">
-		SELECT TOP 10 BOOK_TITLE as bookTitle,BOOK_ID as bookId,BOOK_AUTHOR as bookAuthor FROM TB_BOOK
+		SELECT TOP 10
+		  BOOK_ID as bookId,BOOK_IMG_URL as bookImgUrl,
+		BOOK_TITLE as bookTitle,BOOK_AUTHOR as bookAuthor,
+		BOOK_PUBLISHTIEM as bookPublishTime,BOOK_PUBLISER as bookPubliser,
+		BOOK_SELLPRICE as bookSellPrice,BOOK_DISCOUNT as bookDiscount,
+		BOOK_ORIGINALPRICE as bookOrignalPrice,BOOK_RECOLAGU as bookRecolagu,
+		BOOK_DETAILED_URL as bookDetailedUrl,BOOK_BOOKOPENBOOK as bookBookOpenBook,
+		BOOK_PAGENUMBER as bookPageNumber,BOOK_ISBN as bookIsbn,
+		BOOK_BARCODE as bookBarcode,
+		BOOK_BINDING as bookBinding,BOOK_KIND as bookKind,
+		BOOK_KINDTEXT as bookKingText,BOOK_SPECIALIST as bookSpeciaList,
+		BOOK_BRIEF as bookBrief,BOOK_CATALOG as bookCatalog,
+		BOOK_EXCERPT as bookExcerpt,BOOK_XIANGGUAN as bookXiangguan,
+		BOOK_ZUOZHEJIANJIE as bookZuoZheJianJie,BOOK_CATEGORY_ID as bookCateGoryId  
+		 FROM TB_BOOK
 		<include refid="selectBookQuery"></include>
 	</select>
 </mapper>

@@ -43,4 +43,9 @@ public class UserServiceImpl implements UserService{
 		return users;
 	}
 
+	public void addUser(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		usersDao.insertUser(map);
+	}
+
 }

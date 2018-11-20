@@ -51,6 +51,26 @@ public class BookController {
 		map.put("bookCateGoryId", index);
 		return bookService.getBoosCategory_next(map,page);
 	}
+	
+	@ResponseBody
+	@RequestMapping(value="/select/{page}")
+	public List<Book> getBoosCategory_value_search(@PathVariable("page") int page,HttpServletRequest request){
+//		if(null != request.getParameter("min") && null != request.getParameter("max")){
+//			request.setAttribute("sell_min", request.getParameter("min"));
+//			request.setAttribute("sell_max", request.getParameter("max"));
+//		}
+		Map<String,Object> map = new HashMap<String, Object>();
+		map = HttpUtil.getQueryMap(request);
+		String content = map.get("value").toString().replace("_", "%");
+		map.put((String) map.get("key"), content);
+		map.remove("key");
+		map.remove("value");
+//		if(null!=map.get("bookmohutitle")){
+//			map.put("bookmohutitle",map.get("bookmohutitle").toString().replace("_", "%"));
+//		}
+		
+		return bookService.getBoosCategory_next(map,page);
+	}
 	/*
 	@ResponseBody
 	@RequestMapping(value="/{index}/{page}",produces="application/json;charset=UTF-8")
@@ -71,6 +91,17 @@ public class BookController {
 	}
 	
 	
+//	@ResponseBody
+//	@RequestMapping(value="/select/{page}",produces="application/json;charset=UTF-8",method=RequestMethod.POST)
+//	public List<Book> getBoosCategory_next_search(@PathVariable("page") int page,HttpServletRequest request){
+//		Map<String,Object> map = new HashMap<String, Object>();
+//		Map<String,Object> para = new HashMap<String, Object>();
+//		map = HttpUtil.getQueryMap(request);
+//		String content = map.get("value").toString().replace("_", "%");
+//		para.put((String) map.get("key"), content);
+//		return bookService.getBoosCategory_next(map, page);
+//	}
+	
 	@ResponseBody
 	@RequestMapping(value="/{index}/countAndCategory",produces="application/json;charset=UTF-8")
 	public Map<String,Object> getBookCountAndCategory(@PathVariable("index") int index,HttpServletRequest request){
@@ -82,4 +113,32 @@ public class BookController {
 		new_map.put("category", index);
 		return new_map;
 	}
+	
+	@ResponseBody
+	@RequestMapping(value="/select/countAndCategory",produces="application/json;charset=UTF-8")
+	public Map<String,Object> getBookCountAndCategory_search(HttpServletRequest request){
+		Map<String,Object> map = new HashMap<String, Object>();
+		Map<String,Object> new_map = new HashMap<String, Object>();
+		Map<String,Object> para = new HashMap<String, Object>();
+		map = HttpUtil.getQueryMap(request);
+		String content = map.get("value").toString().replace("_", "%");
+		para.put((String) map.get("key"), content);
+//		if(null!=map.get("bookmohutitle")){
+//			map.put("bookmohutitle",map.get("bookmohutitle").toString().replace("_", "%"));
+//		}
+		new_map.put("count", bookService.getBookCategoryCount(para));
+		new_map.put("category", "null");
+		return new_map;
+	}
+	
+	
+	@ResponseBody
+	@RequestMapping(value="show/{index}",produces="application/json;charset=UTF-8",method=RequestMethod.GET)
+	public List<Book> getBookInfo(@PathVariable int index){
+		Map<String,Object> map = new HashMap<String, Object>();
+		map.put("bookId", index);
+		List<Book> book = bookService.getBookofCategory(map);
+		return book;
+	}
+
 }
